@@ -1,0 +1,52 @@
+disabled_rules: # rule identifiers to exclude from running
+#  - trailing_newline
+#  - opening_brace
+#  - custom_rules
+#  - empty_count
+#  - type_name
+#  - function_body_length
+#  - nesting
+#  - variable_name
+#  - conditional_binding_cascade
+#  - operator_whitespace
+#  - control_statement
+    - variable_name
+    - line_length
+    - trailing_whitespace
+    - function_body_length
+#  - return_arrow_whitespace
+#  - closing_brace
+#  - statement_position
+#  - type_body_length
+#  - todo
+#  - legacy_constructor
+#  - missing_docs
+#  - valid_docs
+#  - file_length
+#  - leading_whitespace
+#  - function_parameter_count
+
+enabled_rules: # some rules are only opt-in
+  - force_unwrapping
+  - force_cast
+  - force_try
+  - comma
+  - legacy_constant
+  - trailing_semicolon
+  - colon
+
+
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+force_unwrapping: error
+force_cast: error
+force_try: error
+comma: error
+trailing_whitespace: error
+cyclomatic_complexity: error
+legacy_constant: error
+trailing_semicolon: error
+colon: error
+
+
+line_length: 120
