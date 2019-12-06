@@ -94,11 +94,46 @@
                     <navigationItem key="navigationItem" id="5E2-fL-QZo"/>
                     <connections>
                         <outlet property="tableView" destination="L2X-kU-9ir" id="Fzn-uw-fIT"/>
+                        <segue destination="KAk-AL-Wv7" kind="show" id="mRS-oT-obH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="85.714285714285708"/>
+        </scene>
+        <!--Article Detail View Controller-->
+        <scene sceneID="inj-pc-GYr">
+            <objects>
+                <viewController storyboardIdentifier="ArticleDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KAk-AL-Wv7" customClass="ArticleDetailViewController" customModule="XebiaTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XUy-pp-x7D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBT-VU-ZDh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kBT-VU-ZDh" firstAttribute="top" secondItem="XUy-pp-x7D" secondAttribute="top" id="2ZJ-MV-Jvu"/>
+                            <constraint firstItem="l1r-8s-7Eb" firstAttribute="trailing" secondItem="kBT-VU-ZDh" secondAttribute="trailing" id="Ll8-QK-97h"/>
+                            <constraint firstItem="kBT-VU-ZDh" firstAttribute="leading" secondItem="XUy-pp-x7D" secondAttribute="leading" id="UIw-1g-6mY"/>
+                            <constraint firstItem="l1r-8s-7Eb" firstAttribute="bottom" secondItem="kBT-VU-ZDh" secondAttribute="bottom" id="wPU-du-tup"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l1r-8s-7Eb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cJN-OG-IU4"/>
+                    <connections>
+                        <outlet property="textView" destination="kBT-VU-ZDh" id="hNE-Ak-g6s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ygP-N3-qKZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1749" y="79"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O7G-og-Lfz">

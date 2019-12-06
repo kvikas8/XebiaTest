@@ -48,3 +48,14 @@ extension ArticleListViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension ArticleListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            guard let articleDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ArticleDetailViewController") as? ArticleDetailViewController else {
+                fatalError("NewsDetailsViewController is not defined")
+            }
+               let articleVM =  self.articleListVM.articleAtIndex(indexPath.row)
+        articleDetailsVC.article = articleVM.article
+        self.navigationController?.pushViewController(articleDetailsVC, animated: true)
+    }
+}
