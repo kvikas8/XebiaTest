@@ -26,7 +26,13 @@ class ArticleListViewController: UIViewController {
     }
     
     private func populatePopularArticles() {
+        self.view.activityStartAnimating()
         ArticleService().getPopularArticlesForPeriod("7") { [weak self] articles in
+            self?.view.activityStopAnimating()
+            guard let articles = articles else {
+                self?.presentAlert(withMessage: "An error occured while fetching News")
+            return
+            }
             self?.articleListVM = ArticleListViewModel(articles: articles)
             self?.tableView.reloadData()
         }
