@@ -11,8 +11,6 @@ git clone https://github.com/kvikas8/Xebiatest.git
 ```
 
 ## Notes
-
-- Due to time constraint I was not able to write test cases and optimise the app further, some tasks to do so are listed in Improvements section..
 - App only support portrait mode for now.
 - App is only tested in iOS (iPhone 11 Simulator) due to time constraint.
 
