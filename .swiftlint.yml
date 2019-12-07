@@ -22,7 +22,7 @@ disabled_rules: # rule identifiers to exclude from running
 #  - legacy_constructor
 #  - missing_docs
 #  - valid_docs
-#  - file_length
+    - file_length
 #  - leading_whitespace
 #  - function_parameter_count
 
@@ -49,4 +49,4 @@ trailing_semicolon: error
 colon: error
 
 
-line_length: 120
+#line_length: 120

@@ -31,6 +31,28 @@ class ArticleListViewController: UIViewController {
             self?.tableView.reloadData()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           
+           if segue.identifier == "ArticleDetailViewController" {
+               prepareSegueForArticleDetails(segue)
+           }
+       }
+       
+       private func prepareSegueForArticleDetails(_ segue: UIStoryboardSegue) {
+           
+           guard let articleDetailsVC = segue.destination as? ArticleDetailViewController else {
+               fatalError("NewsDetailsViewController is not defined")
+           }
+           
+           guard let indexPath = tableView.indexPathForSelectedRow else {
+               fatalError("Unable to get the selected row")
+           }
+           
+           let articleVM =  self.articleListVM.articleAtIndex(indexPath.row)
+            articleDetailsVC.article = articleVM.article
+           
+       }
 }
 
 extension ArticleListViewController: UITableViewDataSource {
@@ -46,16 +68,5 @@ extension ArticleListViewController: UITableViewDataSource {
         let articleVM = self.articleListVM.articleAtIndex(indexPath.row)
         cell.configure(vm: articleVM)
         return cell
-    }
-}
-
-extension ArticleListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            guard let articleDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ArticleDetailViewController") as? ArticleDetailViewController else {
-                fatalError("NewsDetailsViewController is not defined")
-            }
-               let articleVM =  self.articleListVM.articleAtIndex(indexPath.row)
-        articleDetailsVC.article = articleVM.article
-        self.navigationController?.pushViewController(articleDetailsVC, animated: true)
     }
 }

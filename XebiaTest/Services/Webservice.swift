@@ -7,13 +7,15 @@
 //
 
 import Foundation
-
+protocol WebServiceProtocol {
+    func load<T>(_ resource: Resource<T>, completion: @escaping (T?) -> Void)
+}
 struct Resource<T> {
     let url: URL
     let parse: (Data) -> T?
 }
 
-class Webservice {
+class Webservice: WebServiceProtocol {
     func load<T>(_ resource: Resource<T>, completion: @escaping (T?) -> Void) {
         URLSession.shared.dataTask(with: resource.url) { data, _, _ in
             if let data = data {

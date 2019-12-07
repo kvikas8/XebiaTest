@@ -73,6 +73,7 @@
                                             <outlet property="authorLabel" destination="npa-tZ-gi0" id="mdb-Pb-k4w"/>
                                             <outlet property="dateLabel" destination="e2G-tX-wRP" id="bWv-VC-zZF"/>
                                             <outlet property="titleLabel" destination="wCz-Nk-r6I" id="7V6-ak-sFL"/>
+                                            <segue destination="KAk-AL-Wv7" kind="show" identifier="ArticleDetailViewController" id="yuf-id-NCy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -94,7 +95,6 @@
                     <navigationItem key="navigationItem" id="5E2-fL-QZo"/>
                     <connections>
                         <outlet property="tableView" destination="L2X-kU-9ir" id="Fzn-uw-fIT"/>
-                        <segue destination="KAk-AL-Wv7" kind="show" id="mRS-oT-obH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
