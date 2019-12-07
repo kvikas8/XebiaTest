@@ -18,9 +18,6 @@ git clone https://github.com/kvikas8/Xebiatest.git
 
 ## Needed Improvements
 - Error handling with proper error messages.
-- Internet connectivity handling
-- UnitTests
-- UITests
 - Localizable strings
 - Proper comments in the code to make it more understandable.
 - Fastlane integration.
