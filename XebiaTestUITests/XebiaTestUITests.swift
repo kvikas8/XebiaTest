@@ -22,16 +22,28 @@ class XebiaTestUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() {
+    
+    func testTableSwipe() {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+       let tablesQuery = app.tables
+        let table = tablesQuery.element
+        table.swipeUp()
+       
     }
 
+    func testCellTap() {
+        let app = XCUIApplication()
+        app.launch()
+        let tablesQuery = app.tables
+        let table = tablesQuery.element
+        let firstCell = table.cells.element(boundBy: 0)
+        firstCell.tap()
+
+    }
+    
     func testLaunchPerformance() {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
